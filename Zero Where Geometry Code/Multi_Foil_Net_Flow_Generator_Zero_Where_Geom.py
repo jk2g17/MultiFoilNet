@@ -25,11 +25,11 @@ dropout    = 0.
 # Root directory of Samples.
 Sample_Location = "D:/IP/01 - Training Data/"
 # List of required samples for Test.
-Test_Sample_List = ["Study_2_H_C"]#["Sample_12_1","Sample_12_2","Sample_12_3","Sample_12_4","Sample_12_5"]
+Test_Sample_List = ["Sample_12_1","Sample_12_2","Sample_12_3","Sample_12_4","Sample_12_5"]
 # Load the required model.
 doLoad = "D:/IP/00 - Training Area/02 - Models/00 - Full Training Set/Varied LRs - Epochs=15 - Exponent=5/Epochs=15 - LR=0_00001 - Exponent=5 - Zero Where Geom/Epoch_15.pt"
 # Define save location.
-SaveArea = "NN_Zeros_Study_2_H_C/"
+SaveArea = "NN_Zeros/"
 # Custom loss function name.
 CLF_Name = "CLF_Linear_Ramp_Step=0.2"
 # BC name.
@@ -45,26 +45,26 @@ k = 0
 Test_Sample_Dictionary = {}
 Test_ID_Dictionary = {}
 
-# for i in range(len(Test_Sample_List)):
-#     # This line finds the numbers in the string name.
-#     ID_Index_Values = [int(s) for s in Test_Sample_List[i].split("_") if s.isdigit()]
-#     for j in range(1,1001):
-#         # This line calculates the relevant ID for the given dataset. Uses logic from the sample name.
-#         ID = (((int(ID_Index_Values[0]) - 1) * 5000) + ((int(ID_Index_Values[1]) - 1) * 1000)) + j
-#         # Create dictionary from this, where for a given index the sample can be found.
-#         Test_Sample_Dictionary[k] = Test_Sample_List[i]
-#         Test_ID_Dictionary[k] = ID
-#         k += 1
+ for i in range(len(Test_Sample_List)):
+     # This line finds the numbers in the string name.
+     ID_Index_Values = [int(s) for s in Test_Sample_List[i].split("_") if s.isdigit()]
+     for j in range(1,1001):
+         # This line calculates the relevant ID for the given dataset. Uses logic from the sample name.
+         ID = (((int(ID_Index_Values[0]) - 1) * 5000) + ((int(ID_Index_Values[1]) - 1) * 1000)) + j
+         # Create dictionary from this, where for a given index the sample can be found.
+         Test_Sample_Dictionary[k] = Test_Sample_List[i]
+         Test_ID_Dictionary[k] = ID
+         k += 1
 
-for i in range(len(Test_Sample_List)):
-    # This line finds the numbers in the string name.
-    for j in range(1,37):
-        # This line calculates the relevant ID for the given dataset. Uses logic from the sample name.
-        ID = j
-        # Create dictionary from this, where for a given index the sample can be found.
-        Test_Sample_Dictionary[k] = Test_Sample_List[i]
-        Test_ID_Dictionary[k] = ID
-        k += 1        
+#for i in range(len(Test_Sample_List)):
+#    # This line finds the numbers in the string name.
+#    for j in range(1,37):
+#        # This line calculates the relevant ID for the given dataset. Uses logic from the sample name.
+#        ID = j
+#        # Create dictionary from this, where for a given index the sample can be found.
+#        Test_Sample_Dictionary[k] = Test_Sample_List[i]
+#        Test_ID_Dictionary[k] = ID
+#        k += 1        
 
 ##########################
 
